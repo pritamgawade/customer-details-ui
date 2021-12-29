@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "00ab9953-7657-4b59-9176-e891260cfd97"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -101,6 +104,5 @@
         }
       }
     }
-  },
-  "defaultProject": "customer-details-ui"
+  }
 }
