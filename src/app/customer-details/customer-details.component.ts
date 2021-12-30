@@ -10,9 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CustomerDetailsComponent implements OnInit {
   title: string = 'Customer Details';
+  message: any;
   constructor(private service: ServicesService, public constants: Constants) { }
-  successmsg: any;
-  errormsg: any;
   selectedCountry: any;
   countries = this.constants.countries;
   canadaStates = this.constants.canadaStates;
@@ -71,9 +70,9 @@ export class CustomerDetailsComponent implements OnInit {
     this.service.saveCustomerDetails(this.customerForm.value).subscribe((res) => {
       this.customerForm.reset();
       if (res.success == true) {
-        this.successmsg = res.message;
+        this.message = res.message;
       } else {
-        console.log("errors", res.errors)
+        this.message = res.errors;
       }
     })
   }
